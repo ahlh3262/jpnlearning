@@ -1,0 +1,90 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom utility classes your app uses ===== */
+.gradient-card {
+  @apply bg-white/80 backdrop-blur rounded-2xl border;
+}
+.shadow-card {
+  @apply shadow-lg;
+}
+.shadow-card-hover {
+  @apply shadow-2xl;
+}
+.transition-smooth {
+  @apply transition-all duration-200 ease-out;
+}
+.gradient-primary {
+  @apply bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full;
+}
+
+.text-japanese-kanji {
+  @apply text-gray-900;
+}
+.text-japanese-hiragana {
+  @apply text-gray-700;
+}
+.text-japanese-meaning {
+  @apply text-gray-800;
+}
+
+/* Optional: base styling */
+html,
+body,
+#__next {
+  height: 100%;
+}
+body {
+  @apply bg-white text-gray-900;
+}
+/* === Soft shadows & glass cards === */
+.shadow-soft {
+  @apply shadow-lg shadow-black/5;
+}
+.glass-card {
+  @apply bg-white/90 backdrop-blur border border-black/5 rounded-2xl;
+}
+
+/* === Pretty buttons (pill) === */
+.btn-pill {
+  @apply rounded-full px-6 py-3 text-sm font-semibold transition-all;
+}
+.btn-primary {
+  @apply bg-indigo-600 text-white hover:bg-indigo-700 active:scale-[.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400;
+}
+.btn-danger {
+  @apply bg-rose-500 text-white hover:bg-rose-600 active:scale-[.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400;
+}
+.btn-soft {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
+}
+
+/* === Toast slide animations === */
+@keyframes toast-slide-up {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes toast-slide-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+.toast-enter {
+  animation: toast-slide-up 0.25s ease-out forwards;
+}
+.toast-exit {
+  animation: toast-slide-down 0.22s ease-in forwards;
+}
